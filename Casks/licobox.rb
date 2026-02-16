@@ -11,7 +11,7 @@ cask "licobox" do
   sha256 "8b7987771805f9c893b9710503161c8f4564ef8d6895fe1255c02ffa3a67394a"
 
   livecheck do
-    url "https://app.licobox.dev/artifacts/download?check_for_update=1&version=#{version}"
+    url "https://app.licobox.dev/artifacts/download?check_for_update=1&version=latest"
     strategy :json do |json, regex|
       json["version"]
     end
