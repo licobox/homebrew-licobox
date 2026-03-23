@@ -48,6 +48,7 @@ cask "licobox" do
     <<~EOS
     Docker client is required to interact with Licobox docker engine.
     You can install Docker CLI using brew `brew install docker`.
+    You may also need to install docker-compose `brew install docker-compose`.
     Skip this step if you already have or installed one.
     EOS
   end
