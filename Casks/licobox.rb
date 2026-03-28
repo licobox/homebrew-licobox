@@ -8,7 +8,7 @@ cask "licobox" do
   depends_on macos: ">= :sequoia"
 
   version "v1.0.1-alpha31"
-  sha256 "ecc08173dd56200ec6439decdbd7e298844fc43c298b4e897598e0a4fccc68bf"
+  sha256 "a5887cb1323d81868db55805123689fbd895a11b058443d35b05eeca8b103f63"
   url "https://app.licobox.dev/artifacts/download?version=#{version}"
 
   livecheck do
@@ -39,7 +39,11 @@ cask "licobox" do
     File.write(fish_completion_path, fish_completion_output)
   end
 
-  uninstall quit: "dev.licobox.licobox-app"
+  uninstall quit: "dev.licobox.licobox-app",
+            launchctl: "dev.licobox.licobox-helper",
+            delete: [
+              "/opt/licobox-helper",
+            ]
 
   # zap trash: "~/.licobox"
 
