@@ -7,8 +7,9 @@ cask "licobox" do
   os macos: "darwin"
   depends_on macos: ">= :sequoia"
 
-  version "v1.0.0-alpha30"
-  sha256 "8aef8c6aaa5b33c8ff61523ff609951496cbba951224636c37373642e0c237bb"
+  version "v1.0.1-alpha31"
+  sha256 "75c52a5ca85c79c2a176dc9a6ac73ca367e52329568ebd9e6585a91847db3a71"
+  url "https://app.licobox.dev/artifacts/download?version=#{version}"
 
   livecheck do
     url "https://app.licobox.dev/artifacts/download?check_for_update=1&version=latest"
@@ -18,8 +19,6 @@ cask "licobox" do
   end
 
   auto_updates true
-
-  url "https://app.licobox.dev/artifacts/download?version=#{version}"
 
   app "Licobox.app"
   binary "#{appdir}/Licobox.app/Contents/Resources/binaries/licobox/bin/licobox"
@@ -40,9 +39,17 @@ cask "licobox" do
     File.write(fish_completion_path, fish_completion_output)
   end
 
-  uninstall quit: "dev.licobox.licobox-app"
+  uninstall quit: "dev.licobox.licobox-app",
+            launchctl: "dev.licobox.licobox-helper",
+            delete: [
+              "/opt/licobox-helper",
+              "~/Library/Caches/dev.licobox.licobox-app",
+              "~/Library/WebKit/dev.licobox.licobox-app",
+            ]
 
-  # zap trash: "~/.licobox"
+  zap trash: [
+    "~/.licobox",
+  ]
 
   def caveats
     <<~EOS
