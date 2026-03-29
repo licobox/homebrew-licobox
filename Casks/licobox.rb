@@ -43,12 +43,12 @@ cask "licobox" do
             launchctl: "dev.licobox.licobox-helper",
             delete: [
               "/opt/licobox-helper",
+              "~/Library/Caches/dev.licobox.licobox-app",
+              "~/Library/WebKit/dev.licobox.licobox-app",
             ]
 
   zap trash: [
     "~/.licobox",
-    "~/Library/Caches/dev.licobox.licobox-app",
-    "~/Library/WebKit/dev.licobox.licobox-app",
   ]
 
   def caveats
