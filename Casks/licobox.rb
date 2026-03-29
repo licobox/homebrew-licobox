@@ -45,7 +45,11 @@ cask "licobox" do
               "/opt/licobox-helper",
             ]
 
-  # zap trash: "~/.licobox"
+  zap trash: [
+    "~/.licobox",
+    "~/Library/Caches/dev.licobox.licobox-app",
+    "~/Library/WebKit/dev.licobox.licobox-app",
+  ]
 
   def caveats
     <<~EOS
