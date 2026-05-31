@@ -7,12 +7,12 @@ cask "licobox" do
   os macos: "darwin"
   depends_on macos: ">= :sequoia"
 
-  version "v1.0.3-alpha33"
-  sha256 "d3f9f3ee5c4d7ea56020839827b8187495ef10dd516bebdaccc7ef0e813e4f38"
-  url "https://app.licobox.dev/artifacts/download?version=#{version}"
+  version "v1.0.4-alpha40"
+  sha256 "8f14955397d2485d5ea020560b41604393e7aeaa3dbc048ffba0c30489935002"
+  url "https://dash.licobox.dev/artifacts/download?version=#{version}"
 
   livecheck do
-    url "https://app.licobox.dev/artifacts/download?check_for_update=1&version=latest"
+    url "https://dash.licobox.dev/artifacts/download?check_for_update=1&version=latest"
     strategy :json do |json, regex|
       json["version"]
     end
