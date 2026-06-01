@@ -7,8 +7,8 @@ cask "licobox" do
   os macos: "darwin"
   depends_on macos: ">= :sequoia"
 
-  version "v1.0.4-alpha40"
-  sha256 "8f14955397d2485d5ea020560b41604393e7aeaa3dbc048ffba0c30489935002"
+  version "v1.0.5-alpha41"
+  sha256 "6a95d3371b8215d262a2932c759949c863903534ec70186e15084b93ddbf8bfc"
   url "https://dash.licobox.dev/artifacts/download?version=#{version}"
 
   livecheck do
